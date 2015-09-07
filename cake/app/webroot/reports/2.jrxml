@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c46107e1-6771-4876-9720-d5dd27b68d76">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select users.*, roles.name
+from users INNER JOIN roles ON users.role_id=roles.id]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="username" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="role_id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="password" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="created" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="83" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="ac990d9c-3d9c-45a4-8f9b-148d3115ea03"/>
+				<textElement textAlignment="Center">
+					<font size="40"/>
+				</textElement>
+				<text><![CDATA[Informe de usuarios]]></text>
+			</staticText>
+			<image>
+				<reportElement x="2" y="0" width="98" height="79" uuid="23d07e9b-0766-4525-b847-82dd7bf17225"/>
+				<imageExpression><![CDATA["C:\\Users\\lenovo\\Pictures\\flower.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="110" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="137" height="27" uuid="80d4613c-4321-4fae-a38f-92e2bd3850e7"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Estación S.L.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="27" width="137" height="30" uuid="45fae72a-3721-4228-af3a-ef3f3f32182a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Calle Romances nº2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="57" width="137" height="26" uuid="935d15c2-2e4e-4386-9717-c96b896056b2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[38002 Tenerife]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="83" width="137" height="27" uuid="cc1874bb-f346-4910-817b-741cc444e62c"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Teléfono 922679982]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="0" width="100" height="27" uuid="ab3f32a8-2909-41b5-8a7b-2a304da4c9a2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="421" y="0" width="100" height="27" uuid="79d58dbf-0a44-4952-8567-f4cd35c7b462"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(new java.text.SimpleDateFormat("dd/MM/yyyy ")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="137" height="42" uuid="8bb4636b-7835-4fbc-8065-cd94e332501d"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Identificador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="0" width="184" height="42" uuid="a02afea1-b2ec-4a28-afb9-eac1b07908c9"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Nombre de usuario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="0" width="114" height="42" uuid="854ff548-68ea-46c2-b19c-94b185807553"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Creado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="0" width="120" height="42" uuid="21d0a191-0282-423c-b463-7b0f668ee235"/>
+				<textElement>
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[Rol]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="27" splitType="Stretch">
+			<textField>
+				<reportElement x="321" y="0" width="100" height="20" uuid="b9a72c6c-ec5d-4eac-9d38-770e2ff090d8"/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="38b1945b-1c6a-4eba-b199-fb9cc88b4236"/>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="100" height="20" uuid="31a2279e-92d3-41d1-b98f-c52c690dde12"/>
+				<textFieldExpression><![CDATA[$F{created}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="0" width="100" height="20" uuid="cc3fda3e-0764-4f92-b1ee-90e8e4d35815"/>
+				<textFieldExpression><![CDATA[$F{username}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="452" y="34" width="100" height="20" uuid="af3d8d40-46b8-4252-9105-ec86b4100fb5"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
